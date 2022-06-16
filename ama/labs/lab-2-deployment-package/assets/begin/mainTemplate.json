@@ -53,7 +53,19 @@
 	  }
 	}
   },
-  "variables": {},
+  "variables": {
+	  "itemPrefix": "[concat('ama', uniqueString(resourceGroup().id))]",
+	  "addressPrefix": "10.0.0.0/16",
+	  "domainNameLabel": "[concat(variables('itemPrefix'), '-dnl')]",
+	  "networkSecurityGroupName": "[concat(variables('itemPrefix'), '-nsg')]",
+	  "nicName": "[concat(variables('itemPrefix'), '-nic')]",
+	  "publicIPAddressName": "[concat(variables('itemPrefix'), '-ip')]",
+	  "storageAccountName": "[concat(parameters('storageAccountName'), uniqueString('storage'))]",
+	  "subnetName": "Subnet",
+	  "subnetPrefix": "10.0.0.0/24",
+	  "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
+	  "virtualNetworkName": "[concat(variables('itemPrefix'), '-vnet')]"
+	},
   "resources": [],
   "outputs": {}
 }
