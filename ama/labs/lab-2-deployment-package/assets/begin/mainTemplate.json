@@ -220,5 +220,14 @@
 		  }
 	  }
   ],
-  "outputs": {}
+  "outputs": {
+	  "adminPassword": "[steps('vmBlade').adminPassword]",
+	  "adminUsername": "[steps('vmBlade').adminUsername]",
+	  "windowsOSVersion": "[steps('vmBlade').operatingSystem]",
+	  "vmSize": "[steps('vmBlade').vmSize]",
+	  "location": "[location()]",
+	  "storageAccountName": "[steps('storageConfigBlade').storageAccount.prefix]",
+	  "storageAccountType": "[steps('storageConfigBlade').storageAccount.type]",
+	  "vmName": "[steps('vmBlade').vmName]"
+  }
 }
